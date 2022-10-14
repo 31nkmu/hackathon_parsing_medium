@@ -43,14 +43,14 @@ def get_data(soup):
         write_in_csv({
             'name': name,
             'price': price,
+            'info': info,
             'images': images,
-            'info': info
         })
 
 
 def write_in_csv(data):
     with open('cars.csv', 'a') as file:
-        names = ['name', 'price', 'images', 'info']
+        names = ['name', 'price', 'info', 'images']
         writer = csv.DictWriter(file, delimiter=',', fieldnames=names)
         writer.writerow(data)
 
